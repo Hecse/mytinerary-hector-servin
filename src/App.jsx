@@ -1,19 +1,17 @@
 import Header from './components/Header'
+import Main from './components/Main'
+import Footer from './components/Footer'
 import './App.css'
 import './styles/Header.css'
+import './styles/Main.css'
 
 function App() {
 
   return (
     <>
       <Header />
-      <main>
-        <p>Hero más Call to Action</p>
-      </main>
-      <footer>
-        <p>Acá va el footer</p>
-        <a href="">About us</a>
-      </footer>
+      <Main />
+      <Footer />
     </>
   )
 }

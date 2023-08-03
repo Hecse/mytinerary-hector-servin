@@ -1,9 +1,15 @@
 const Header = () => {
     return (
         <header className='header-container'>
-            <h2 className='header-title'>My Tynerary </h2>
-            <a href="">Home</a>
-            <a href="">Cities</a>
+            <div>
+                <h2 className='header-title'>My Tinerary</h2>
+            </div>
+            
+            <div>
+                <a href="">Home</a>
+                <a href="">Cities</a>
+                <button>Login</button>
+            </div>
         </header>
     )
 }
