@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import './App.css'
 import './styles/Header.css'
 import './styles/Main.css'
+import './styles/Footer.css'
 
 function App() {
 
