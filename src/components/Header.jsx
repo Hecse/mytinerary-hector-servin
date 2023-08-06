@@ -10,7 +10,7 @@ const Header = () => {
                     <a href="#">Cities</a>
 
                     <div className="logIn">
-                        <img src="./public/usuario.svg" width={25} alt="logIn" />
+                        <a href="#"><img src="./public/usuario.svg" width={25} alt="logIn" /></a>
                     </div>
 
                 </div>
