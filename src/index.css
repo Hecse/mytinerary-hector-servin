@@ -1,0 +1,9 @@
+@font-face {
+    font-family: audiowide-regular;
+    src: url(D:/Trabajos/Programacion/ArgentinaPrograma/mindhub/mytinerary-hector-servin/public/assets/fonts/Audiowide-Regular.otf);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

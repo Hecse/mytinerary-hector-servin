@@ -1,8 +1,9 @@
-header {
+/* header {
     display: flex;
     background-color: darkgray;
     align-items: center;
     justify-content: center;
+    height: 10vw;    
 }
 
 .header-container {
@@ -10,7 +11,6 @@ header {
     justify-content: space-between;
     padding:0.5em ;
     width: 800px;
-    
 }
 
 .header-title {
@@ -38,4 +38,4 @@ a {
     width: 36px;
     height: 36px;
     border-radius: 20px;
-}
+} */
