@@ -1,19 +1,9 @@
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
-import Carousela from './components/Carousela'
-
+import { RouterProvider } from "react-router-dom"
+import router from "./router/router"
 
 function App() {
   return (
-    <>
-      <Header />
-      <Main />
-      <div className='flex justify-center'>
-        <Carousela />
-      </div>
-      <Footer />
-    </>
+   <RouterProvider router={router}/>     
   )
 }
 

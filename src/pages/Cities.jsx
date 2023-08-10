@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Cities = () => {
+export const Cities = () => {
   return (
-    <div>Cities</div>
+    <div className='flex items-center justify-center my-36'>
+      <div><img src="/assets/images/UnderConstruction-1.png " alt="Page Uder Construction" />
+      </div>
+    </div>
   )
 }
-
-export default Cities
