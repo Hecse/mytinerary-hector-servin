@@ -4,7 +4,7 @@ import Carousela from "../components/Carousela"
 const Home = () => {
   return (
     <div className="bg-white" >
-            <div className="mt-24" >
+            <div className="" >
                 <img className="object-none h-72 w-full " src="./assets/images/puerto-madero.jpg" alt="Puerto Madero" />
             </div>
             
@@ -15,9 +15,9 @@ const Home = () => {
             <div className="relative isolate px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl ">
                     <div className="text-center">
-                        <h1 className="font-bold text-gray-900 sm:text-6xl font-[audiowide-regular]">MyTynerary</h1>
+                        <h1 className="font-bold text-indigo-600 sm:text-6xl font-[audiowide-regular]">My<span className='text-gray-800'>Tinerary</span> </h1>
                         <p className="mt-8 text-lg text-gray-800 font-bold">Find your perfect trip, designed by insiders who know and love their cities!</p>
-                        <p className="mt-4 text-lg leading-6 text-gray-800">Our app will help you find the perfect path for your next trip. With an easy to use interface and a host of itinerary options, planning your next trip has never been easier.</p>
+                        <p className="mt-4 text-base leading-6 text-gray-800">Our app will help you find the perfect path for your next trip. With an easy to use interface and a host of itinerary options, planning your next trip has never been easier.</p>
 
                         <div className='flex justify-center mt-4'><Carousela /></div>
 

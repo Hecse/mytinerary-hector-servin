@@ -5,14 +5,14 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="absolute inset-x-0 top-0">
+        <header className="bg-white">
             <nav className="flex items-center justify-between p-4 lg:px-8" >
                 <div className="flex items-center lg:flex-1">
                     <a href="/#" className="-m-1.5 p-1.5">
                         <span className="sr-only">MyTinerary</span>
                         <img className="h-10 w-auto" src="/assets/images/favicon.png" alt="My Tinerary" />
                     </a>
-                    <p class="ml-2 text-md text-gray-800 font-[audiowide-regular] ">MyTynerary</p>
+                    <p class="ml-2 text-md text-gray-800 font-[audiowide-regular] ">MyTinerary</p>
                 </div>
 
                 <div className="flex lg:hidden">
@@ -26,9 +26,9 @@ const Header = () => {
                 </div>
 
                 <div className="hidden items-center lg:flex lg:gap-x-10 ">
-                    <a href="/#" className="text-sm font-semibold leading-6 text-gray-900">Home</a>
-                    <a href="/Cities" className="text-sm font-semibold leading-6 text-gray-900">Cities</a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">LogIn</a>
+                    <a href="/#" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">Home</a>
+                    <a href="/Cities" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">Cities</a>
+                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">LogIn</a>
 
                     <div className="hidden md:flex md:flex-1 md:justify-end items-center">
                         <div className="flex items-center justify-center border-2 border-indigo-600 rounded-full ml-5 h-10 w-10 ">
