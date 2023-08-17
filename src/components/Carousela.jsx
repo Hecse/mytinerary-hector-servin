@@ -1,25 +1,49 @@
-import Carousel from './Carousel'
+import React from 'react';
+import Carousel from './Carousel';
 
 const slides = [
-    "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-    "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-    "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-    "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-]
+  "/assets/images/1.jpg",
+  "/assets/images/2.jpeg",
+  "/assets/images/3.jpeg",
+  "/assets/images/4.jpg",
+  "/assets/images/5.jpeg",
+  "/assets/images/6.jpeg",
+  "/assets/images/7.jpeg",
+  "/assets/images/8.jpeg",
+  "/assets/images/9.jpeg",
+  "/assets/images/10.jpeg",
+  "/assets/images/11.jpeg",    
+  "/assets/images/12.jpg",
+];
+
+const chunkArray = (array, chunkSize) => {
+  const chunkedArray = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    chunkedArray.push(array.slice(i, i + chunkSize));
+  }
+  return chunkedArray;
+};
 
 export default function Carousela() {
-    return (
-        <div className='Carousela'>
-            <div className='max-w-lg mb-8 '>
-                <Carousel>
-                    {slides.map((s) => (<img src={s} />))}
-                </Carousel>
+  const groupedSlides = chunkArray(slides, 2);
+
+  return (
+    <div className='Carousela'>
+      <div className='max-w-3xl mb-8'>
+        <Carousel>
+          {groupedSlides.map((group, index) => (
+            <div key={index}>
+              {group.map((s, subIndex) => (
+                <img 
+                key={subIndex} 
+                src={s} alt={`carousel-slide-${subIndex}`} 
+                />
+              ))}
             </div>
-        </div>
-    )
+          ))}
+        </Carousel>
+      </div>
+    </div>
+  );
 }
+

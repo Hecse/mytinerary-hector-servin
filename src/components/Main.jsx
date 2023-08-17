@@ -19,13 +19,11 @@ const Main = () => {
                         <div></div>
 
                         <div className="my-8 flex items-center justify-center gap-x-6">
-                            <a href="#" className="rounded-full bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Start your journey here </a>
-                            <a
-                            className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
-                            href="/download"
-                        >
-                            Download
-                        </a>
+                            <a href="#" className="rounded-full bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Start your journey here
+                            </a>
+
+                            <a href="#" className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
+                            </a>
                         </div>
                     </div>
                 </div>
