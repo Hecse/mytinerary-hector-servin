@@ -10,5 +10,7 @@ export default {
     extend: {},
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    '@tailwindcss/forms'
+  ],
 }
