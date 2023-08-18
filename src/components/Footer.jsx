@@ -1,33 +1,27 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
     return (
 
         <footer className="bg-gray-700">
             <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-                
+
                 <ul className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
                     <li>
-                        <a className="text-white transition hover:text-sky-500 " href="/#">
-                            Home
-                        </a>
+                        <Link to="/#" className="text-white transition hover:text-sky-500">Home</Link>
                     </li>
 
                     <li>
-                        <a className="text-white transition hover:text-sky-500" href="/Cities">
-                            Cities
-                        </a>
+                        <Link to="/Cities" className="text-white transition hover:text-sky-500">Cities</Link>
                     </li>
 
                     <li>
-                        <a className="text-white transition hover:text-sky-500" href="/">
-                            About us
-                        </a>
+                        <Link to="#" className="text-white transition hover:text-sky-500">About us</Link>
                     </li>
 
                     <li>
-                        <a className="text-white transition hover:text-sky-500" href="/">
-                            Terms and Conditions
-                        </a>
-                    </li>             
+                        <Link to="#" className="text-white transition hover:text-sky-500">Terms and Conditions</Link>
+                    </li>
                 </ul>
 
                 <ul className="mt-12 flex justify-center gap-6 md:gap-8">
@@ -96,7 +90,7 @@ const Footer = () => {
                                 />
                             </svg>
                         </a>
-                    </li>                    
+                    </li>
                 </ul>
             </div>
         </footer>

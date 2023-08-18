@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Dialog } from "@material-tailwind/react"
 
 const Header = () => {
@@ -8,11 +9,11 @@ const Header = () => {
         <header className="bg-white">
             <nav className="flex items-center justify-between p-4 lg:px-8" >
                 <div className="flex items-center lg:flex-1">
-                    <a href="/#" className="-m-1.5 p-1.5">
+                    <Link to="/#" className="-m-1.5 p-1.5">
                         <span className="sr-only">MyTinerary</span>
                         <img className="h-10 w-auto" src="/assets/images/favicon.png" alt="My Tinerary" />
-                    </a>
-                    <p class="ml-2 text-md text-gray-800 font-[audiowide-regular] ">MyTinerary</p>
+                    </Link>
+                    <p class="ml-2 text-md text-gray-800 font-[audiowide-regular]">MyTinerary</p>
                 </div>
 
                 <div className="flex lg:hidden">
@@ -26,13 +27,13 @@ const Header = () => {
                 </div>
 
                 <div className="hidden items-center lg:flex lg:gap-x-10 ">
-                    <a href="/#" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">Home</a>
-                    <a href="/Cities" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">Cities</a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">LogIn</a>
+                    <Link to="/#" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">Home</Link>
+                    <Link to="/Cities" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">Cities</Link>
+                    <Link to="/Login" className="text-sm font-semibold leading-6 text-gray-900 transition hover:text-indigo-600">Login</Link>
 
                     <div className="hidden md:flex md:flex-1 md:justify-end items-center">
                         <div className="flex items-center justify-center border-2 border-indigo-600 rounded-full ml-5 h-10 w-10 ">
-                            <a href="#"> <img class="h-8 w-auto" src="./assets/images/usuario.svg" alt="Log in" /></a>
+                            <Link to="/Login"><img class="h-8" src="./assets/images/usuario.svg" alt="Log in" /></Link>
                         </div>
                     </div>
                 </div>
@@ -61,15 +62,15 @@ const Header = () => {
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
-                                <a href="/#" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Home</a>
-                                <a href="/Cities" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Cities</a>
-                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Log in</a>
+                                <Link to="/#" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Home</Link>
+                                <Link to="/Cities" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Cities</Link>
+                                <Link to="/Login" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Login</Link>                                 
                             </div>
                         </div>
                     </div>
                 </div>
             </Dialog>
-            
+
         </header>
     )
 }

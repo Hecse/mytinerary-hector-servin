@@ -1,10 +1,14 @@
 import React from 'react'
+import Card from '../components/Card'
 
 export const Cities = () => {
   return (
-    <div className='flex items-center justify-center my-40'>
-      <div><img src="/assets/images/UnderConstruction-1.png " alt="Page Uder Construction" />
-      </div>
+    <div className='fh-56 grid grid-cols-1 gap-4 content-start p-8'>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   )
 }

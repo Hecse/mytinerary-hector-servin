@@ -12,7 +12,7 @@ const slides = [
   "/assets/images/8.jpeg",
   "/assets/images/9.jpeg",
   "/assets/images/10.jpeg",
-  "/assets/images/11.jpeg",    
+  "/assets/images/11.jpeg",
   "/assets/images/12.jpg",
 ];
 
@@ -34,9 +34,9 @@ export default function Carousela() {
           {groupedSlides.map((group, index) => (
             <div key={index}>
               {group.map((s, subIndex) => (
-                <img 
-                key={subIndex} 
-                src={s} alt={`carousel-slide-${subIndex}`} 
+                <img
+                  key={subIndex}
+                  src={s} alt={`carousel-slide-${subIndex}`}
                 />
               ))}
             </div>

@@ -16,13 +16,13 @@ const Home = () => {
             <div className="relative isolate px-6 lg:px-8">
                 <div className="mx-auto">
                     <div className="text-center">
-                        <h1 className="font-bold text-indigo-600 sm:text-6xl font-[audiowide-regular]">My<span className='text-gray-800'>Tinerary</span> </h1>
+                        <h1 className="font-bold text-indigo-600 text-6xl font-[audiowide-regular]">My<span className='text-gray-800'>Tinerary</span> </h1>
                         <p className="mt-8 text-lg text-gray-800 font-bold">Find your perfect trip, designed by insiders who know and love their cities!</p>
                         <p className="mt-4 text-base leading-6 text-gray-800">Our app will help you find the perfect path for your next trip. With an easy to use interface and a host of itinerary options, planning your next trip has never been easier.</p>
 
                         <div className='flex justify-center mt-4'><Carousela /></div>
 
-                        <div className='flex justify-center mt-4'><Carousulb /></div>
+                        <div className='flex justify-center my-4'><Carousulb /></div>
 
                         <div className="mb-6 flex items-center justify-center gap-x-6">
                             <a

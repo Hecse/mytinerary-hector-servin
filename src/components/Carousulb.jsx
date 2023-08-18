@@ -1,9 +1,10 @@
-//import { MenuHandler } from "@material-tailwind/react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Carousulb = () => {
 
-    let [index, setIndex] = useState(0);
+    const [startIndex, setStartIndex] = useState(0);
+
+    const imagesPerGroup = 4;
 
     const slid = [
         "/assets/images/1.jpg",
@@ -16,25 +17,66 @@ const Carousulb = () => {
         "/assets/images/8.jpeg",
         "/assets/images/9.jpeg",
         "/assets/images/10.jpeg",
-        "/assets/images/11.jpeg",    
+        "/assets/images/11.jpeg",
         "/assets/images/12.jpg",
-      ];
+    ];
 
     const handlePrev = () => {
-        setIndex((index) => (index === 0 ? slid.length - 1 : index - 1));
+        setStartIndex((startIndex) =>
+            startIndex === 0
+                ? slid.length - imagesPerGroup
+                : startIndex - imagesPerGroup
+        );
     };
 
     const handleNext = () => {
-        setIndex((index) => (index === slid.length - 1 ? 0 : index + 1));
-
+        setStartIndex((startIndex) =>
+            startIndex >= slid.length - imagesPerGroup
+                ? 0
+                : startIndex + imagesPerGroup
+        );
     };
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleNext(); // Move to the next group of images
+        }, 2000); // 2000 milliseconds = 2 seconds
+
+        return () => {
+            clearInterval(interval); // Clean up the interval when the component unmounts
+        };
+    }, [startIndex]); // Run the effect whenever startIndex changes
+
+
     return (
-        <div>
-            <h2>Carouselb</h2>
-            <img src={slid[index]} alt="" />
-            <button onClick={handlePrev}>Prev</button>
-            <button onClick={handleNext}>Next</button>
+        <div className='relative '>
+            <div className="flex">
+                {slid.slice(startIndex, startIndex + imagesPerGroup).map((image, idx) => (
+                    <div key={idx} className="flex-shrink-0">
+                        <img src={image} alt={`Image ${idx}`} className="h-72" />
+                    </div>
+                ))}
+            </div>
+
+            <div className='absolute inset-0 flex justify-between p-4'>
+                <button onClick={handlePrev}>
+                    <img
+                        className='h-8 p1 rounded-full bg-white/50 hover:bg-white'
+                        src='public/assets/images/chevron-left-svgrepo-com.svg'
+                        alt='left'
+                    />
+                </button>
+
+                <button onClick={handleNext}>
+                    <img
+                        className='h-8 p1 rounded-full bg-white/50 hover:bg-white'
+                        src='public/assets/images/chevron-right-svgrepo-com.svg'
+                        alt='right'
+                    />
+                </button>
+
+            </div>
+
         </div>
     )
 }
