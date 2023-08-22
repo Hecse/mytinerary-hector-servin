@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 
 const MainLayouts = () => {
   return (
-    <div className="flex flex-col">
+    <div className="">
       <Header />
         <Outlet />
       <Footer />

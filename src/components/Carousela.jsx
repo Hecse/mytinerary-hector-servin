@@ -28,7 +28,7 @@ export default function Carousela() {
   const groupedSlides = chunkArray(slides, 2);
 
   return (
-    <div className='Carousela'>
+    <div>
       <div className='max-w-3xl mb-8'>
         <Carousel>
           {groupedSlides.map((group, index) => (
