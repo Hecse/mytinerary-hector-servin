@@ -39,13 +39,13 @@ const Carousulb = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            handleNext(); // Move to the next group of images
-        }, 2000); // 2000 milliseconds = 2 seconds
+            handleNext(); // mueve al siguiente groupo de imagenes
+        }, 2000); 
 
         return () => {
-            clearInterval(interval); // Clean up the interval when the component unmounts
+            clearInterval(interval); // limpia el intervalo cuando el componente se desmonta
         };
-    }, [startIndex]); // Run the effect whenever startIndex changes
+    }, [startIndex]); // ejecuta el efecto cada vez que cambia
 
 
     return (

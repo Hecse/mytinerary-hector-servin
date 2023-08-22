@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 
-
 export const Cities = () => {
   const [cities, setCities] = useState();
 
@@ -27,8 +26,8 @@ export const Cities = () => {
   }
 
   return (
-    <div className=''>
-      <div className="flex w-screen items-center justify-center p-5">
+    <div className='container mx-auto px-8'>
+      <div className="flex items-center justify-center p-5">
         <div className="rounded-lg bg-indigo-600 p-1 w-2/4">
           <div className="flex">
             <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-indigo-600 bg-white p-5">
@@ -42,12 +41,12 @@ export const Cities = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-4 p-8">
+      <div className="grid md:grid-cols-3 gap-4">
         {
           cities?.map((city) => {
             return (
               <Link key={city._id} to={`/cities/${city._id}`}>
-                <Card title={city.city} description={city.description} image={city.image} />
+                <Card title={city.city} image={city.image} />
               </Link>
             )
           })}

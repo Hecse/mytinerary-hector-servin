@@ -2,12 +2,12 @@ import React from 'react'
 import Carousulb from '../components/Carousulb'
 
 const Home = () => {
-  return (
-    <div className="bg-white" >
+    return (
+        <div>
             <div>
                 <img className="object-none h-72 w-full " src="./assets/images/puerto-madero.jpg" alt="Puerto Madero" />
             </div>
-            
+
             <div className="flex justify-center -mt-48 drop-shadow-lg ">
                 <img className="w-64" src="/assets/images/mt.png" alt="MyTineray" />
             </div>
@@ -23,15 +23,15 @@ const Home = () => {
 
                         <div className="my-4 flex items-center justify-center">
                             <a
-                            className="inline-block rounded-full bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
-                            href="/Cities"> Start your journey here
-                        </a>
+                                className="inline-block rounded-full bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+                                href="/Cities"> Start your journey here
+                            </a>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default Home

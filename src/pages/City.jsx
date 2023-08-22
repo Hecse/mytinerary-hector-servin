@@ -7,16 +7,8 @@ const City = () => {
     const { id } = useParams();
     const [city, setCity] = useState({});
 
-    //console.log(city)
-    //console.log(id)
-    /* const { cityNamber } = useParams()
     useEffect(() => {
-        fetch('http://localhost:7000/api/cities?city=')
-            .then(res => res.json())
-            .then(city => setCity(city))
-    }) */
-
-    useEffect(() => {
+        // trae la API
         axios.get('http://localhost:7000/api/cities/' + id)
             .then(response => {
                 const cityData = response.data.city;
@@ -25,13 +17,11 @@ const City = () => {
             .catch(error => {
                 console.error("Error fetching city data:", error);
             });
-    }, [id]); // Se ejecuta cada vez que el ID cambie
-
+    }, [id]); // se ejecuta cada vez q cambia el
 
     return (
-        <div className=''>
-
-            <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+        <div className='container mx-auto px-8'>
+            <article className="overflow-hidden rounded-lg shadow transition hover:shadow-2x1">
                 <img
                     alt="Photo"
                     src={city.image}
@@ -39,7 +29,7 @@ const City = () => {
                 />
 
                 <div className="bg-white p-4 sm:p-6">
-                    <h3 className="mt-0.5 text-xl text-black">
+                    <h3 className="mt-0.5 text-xl font-bold text-black">
                         {city.city} - {city.country}
                     </h3>
 
@@ -55,7 +45,6 @@ const City = () => {
                     href="/Cities"> Go back
                 </a>
             </div>
-
         </div>
     )
 }
