@@ -1,29 +1,50 @@
+import axios from "axios"
 import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const City = () => {
 
     const { id } = useParams();
-    const { city } = useParams();    
+    const [city, setCity] = useState({});
+
+    //console.log(city)
+    //console.log(id)
+    /* const { cityNamber } = useParams()
+    useEffect(() => {
+        fetch('http://localhost:7000/api/cities?city=')
+            .then(res => res.json())
+            .then(city => setCity(city))
+    }) */
+
+    useEffect(() => {
+        axios.get('http://localhost:7000/api/cities/' + id)
+            .then(response => {
+                const cityData = response.data.city;
+                setCity(cityData);
+            })
+            .catch(error => {
+                console.error("Error fetching city data:", error);
+            });
+    }, [id]); // Se ejecuta cada vez que el ID cambie
+
 
     return (
         <div className=''>
 
             <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-                <h2 className='text-3xl text-center'>City ID: {id}</h2>
-                <h2 className='text-3xl text-center'>City Name: {city}</h2>
                 <img
-                    alt="Office"
-                    src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                    alt="Photo"
+                    src={city.image}
                     className="h-56 w-full object-cover"
                 />
 
                 <div className="bg-white p-4 sm:p-6">
                     <h3 className="mt-0.5 text-xl text-black">
-                        Titulo
+                        {city.city} - {city.country}
                     </h3>
 
                     <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-900">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, repellendus. Non unde itaque aliquam ducimus. Error minus sapiente, cumque blanditiis quisquam delectus architecto laudantium at possimus vitae ex facere provident.
+                        {city.description}
                     </p>
                 </div>
             </article>

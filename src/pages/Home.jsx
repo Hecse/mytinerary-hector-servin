@@ -1,5 +1,4 @@
 import React from 'react'
-import Carousela from "../components/Carousela"
 import Carousulb from '../components/Carousulb'
 
 const Home = () => {
@@ -19,8 +18,6 @@ const Home = () => {
                         <h1 className="font-bold text-indigo-600 text-6xl font-[audiowide-regular]">My<span className='text-gray-800'>Tinerary</span> </h1>
                         <p className="mt-8 text-lg text-gray-800 font-bold">Find your perfect trip, designed by insiders who know and love their cities!</p>
                         <p className="mt-4 text-base leading-6 text-gray-800">Our app will help you find the perfect path for your next trip. With an easy to use interface and a host of itinerary options, planning your next trip has never been easier.</p>
-
-                        <div className='flex justify-center mt-4'><Carousela /></div>
 
                         <div className='flex justify-center mt-4'><Carousulb /></div>
 

@@ -49,11 +49,11 @@ const Carousulb = () => {
 
 
     return (
-        <div className='overflow-hidden relative '>
+        <div className='overflow-hidden relative max-w-3xl '>
             <div className="flex ">
                 {slid.slice(startIndex, startIndex + imagesPerGroup).map((image, idx) => (
-                    <div key={idx} className="flex-shrink-0">
-                        <img src={image} alt={`Image ${idx}`} className="h-72" />
+                    <div key={idx}>
+                        <img src={image} alt={`Image ${idx}`} />
                     </div>
                 ))}
             </div>
