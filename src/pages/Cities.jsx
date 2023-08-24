@@ -5,24 +5,27 @@ import { useEffect, useRef, useState } from 'react'
 
 export const Cities = () => {
   const [cities, setCities] = useState();
-  const myRef = useRef('Hola');
-  // console.log(myRef)
+  let inputSearch = useRef();
 
   useEffect(() => {
-    axios.get('http://localhost:7000/api/cities?city=')
+    axios.get('http://localhost:7000/api/cities')
       .then(response => setCities(response.data.cities))
       .catch(err => console.log(err))
   }, []);
 
-  const handleImputChage = async (city) => {
-    // console.log(city.target.value)
-
+  const handleSearch = async () => {
+    const name = inputSearch.current.value;
     try {
-      const response = await axios.get(`http://localhost:7000/api/cities?city=${city.target.value}`)
+      const response = await axios.get(`http://localhost:7000/api/cities?city=${name}`)
       setCities(response.data.cities)
 
     } catch (error) {
-      console.log(error)
+      if (error.response.status === 404) {
+        console.log('no se encontro la ciudad')
+        setCities([])
+      } else {
+        console.log(error)
+      }
     }
   }
 
@@ -37,21 +40,25 @@ export const Cities = () => {
               </svg>
             </div>
 
-            <input onChange={handleImputChage} className="w-full bg-white pl-2 text-base font-semibold outline-0" type="text" placeholder="City name" />
-            <input type="button" value="Search" className="bg-indigo-600 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-indigo-500 transition-colors"/>
+            <input ref={inputSearch} className="w-full bg-white pl-2 text-base font-semibold outline-0" type="text" placeholder="City name" />
+
+            <button onClick={handleSearch} className="bg-indigo-600 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-indigo-500 transition-colors">Search</button>
           </div>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"> 
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {
-          cities?.map((city) => {
-            return (
-              <Link key={city._id} to={`/cities/${city._id}`}>
-                <Card title={city.city} image={city.image} />
-              </Link>
-            )
-          })}
+          cities?.length > 0
+            ? cities?.map((city) => {
+              return (
+                <Link key={city._id} to={`/cities/${city._id}`}>
+                  <Card title={city.city} image={city.image} />
+                </Link>
+              )
+            }): <h2 className='text-center'>No se encontro la ciudad</h2>  
+            
+        }
       </div>
     </div>
   )
