@@ -17,7 +17,7 @@ const City = () => {
             .catch(error => {
                 console.error("Error fetching city data:", error);
             });
-    }, [id]); // se ejecuta cada vez q cambia el
+    }, [id]); // se ejecuta cada vez q cambia el id
 
     return (
         <div className='container mx-auto px-8'>
@@ -25,7 +25,7 @@ const City = () => {
                 <img
                     alt="Photo"
                     src={city.image}
-                    className="h-56 w-full object-cover"
+                    className="h-96 w-full object-cover"
                 />
 
                 <div className="bg-white p-4 sm:p-6">

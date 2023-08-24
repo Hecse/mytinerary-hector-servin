@@ -52,7 +52,6 @@ const Header = () => {
                             type="button"
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"
                             onClick={() => setMobileMenuOpen(false)}>
-
                             <span className="sr-only">Close menu</span>
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
@@ -62,9 +61,9 @@ const Header = () => {
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
-                                <Link to="/#" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Home</Link>
-                                <Link to="/Cities" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Cities</Link>
-                                <Link to="/Login" className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-gray-400">Login</Link>                                 
+                                <Link to="/#" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-indigo-300">Home</Link>
+                                <Link to="/Cities" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-indigo-300">Cities</Link>
+                                <Link to="/Login" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-indigo-300">Login</Link>                                 
                             </div>
                         </div>
                     </div>

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import Card from '../components/Card'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
-
+import { useEffect, useRef, useState } from 'react'
 
 export const Cities = () => {
   const [cities, setCities] = useState();
+  const myRef = useRef('Hola');
+  // console.log(myRef)
 
   useEffect(() => {
     axios.get('http://localhost:7000/api/cities?city=')
@@ -14,7 +15,7 @@ export const Cities = () => {
   }, []);
 
   const handleImputChage = async (city) => {
-    console.log(city.target.value)
+    // console.log(city.target.value)
 
     try {
       const response = await axios.get(`http://localhost:7000/api/cities?city=${city.target.value}`)
@@ -37,11 +38,12 @@ export const Cities = () => {
             </div>
 
             <input onChange={handleImputChage} className="w-full bg-white pl-2 text-base font-semibold outline-0" type="text" placeholder="City name" />
+            <input type="button" value="Search" className="bg-indigo-600 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-indigo-500 transition-colors"/>
           </div>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"> 
         {
           cities?.map((city) => {
             return (
