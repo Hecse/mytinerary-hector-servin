@@ -31,7 +31,7 @@ export const Cities = () => {
 
   return (
     <div className='container mx-auto px-8'>
-      <div className="flex items-center justify-center p-5">
+      <div className="flex items-center justify-center p-4">
         <div className="rounded-lg bg-indigo-600 p-1 w-2/4">
           <div className="flex">
             <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-indigo-600 bg-white p-5">
@@ -56,9 +56,15 @@ export const Cities = () => {
                   <Card title={city.city} image={city.image} />
                 </Link>
               )
-            }): <h2 className='text-center'>No se encontro la ciudad</h2>  
-            
+            }) : <h2 />
         }
+      </div>
+
+      <div>
+        {cities?.length === 0 && <div className="flex h-screen text-center items-center justify-center text-lg"><p>City not found<br />
+          <Link to="/cities/#" className="text-lg text-center font-semibold leading-6 text-gray-900 transition hover:text-indigo-600" onClick={() => window.location.reload()}>PLEASE TRY AGAIN
+          </Link></p>
+        </div>}
       </div>
     </div>
   )

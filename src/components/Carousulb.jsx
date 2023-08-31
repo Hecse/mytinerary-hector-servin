@@ -7,18 +7,18 @@ const Carousulb = () => {
     const imagesPerGroup = 4;
 
     const slid = [
-        "/assets/images/1.jpg",
-        "/assets/images/2.jpeg",
-        "/assets/images/3.jpeg",
-        "/assets/images/4.jpg",
-        "/assets/images/5.jpeg",
-        "/assets/images/6.jpeg",
-        "/assets/images/7.jpeg",
-        "/assets/images/8.jpeg",
-        "/assets/images/9.jpeg",
-        "/assets/images/10.jpeg",
-        "/assets/images/11.jpeg",
-        "/assets/images/12.jpg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/1.jpg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/2.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/3.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/4.jpg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/5.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/6.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/7.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/8.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/9.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/10.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/11.jpeg",
+        "https://www.noticiasgremiales.com/mas_fotos/turism/12.jpg",
     ];
 
     const handlePrev = () => {
@@ -40,7 +40,7 @@ const Carousulb = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             handleNext(); // mueve al siguiente groupo de imagenes
-        }, 2000); 
+        }, 2000); // tiempo
 
         return () => {
             clearInterval(interval); // limpia el intervalo cuando el componente se desmonta
