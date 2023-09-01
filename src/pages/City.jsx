@@ -51,7 +51,7 @@ const City = () => {
                     city && city.itinerary && city.itinerary.map((itinerary) => {
                         return (
                             <div key={itinerary._id}>
-                                <CardIt name={itinerary.name} price={itinerary.price} photo={itinerary.photo} user={itinerary.user.name} userImage={itinerary.user.image} duration={itinerary.duration}/>
+                                <CardIt name={itinerary.name} price={itinerary.price} photo={itinerary.photo} user={itinerary.user.name} userImage={itinerary.user.image} duration={itinerary.duration} hashtag={itinerary.hashtag}/>
                             </div>
                         )
                     })
