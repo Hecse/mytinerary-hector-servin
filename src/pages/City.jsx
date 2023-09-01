@@ -22,30 +22,36 @@ const City = () => {
 
     return (
         <div className='container mx-auto px-8'>
-            <article className="overflow-hidden rounded-lg shadow transition hover:shadow-2x1">
+            <article className="overflow-hidden relative rounded-lg ">
                 <img
                     alt="Photo"
                     src={city.image}
-                    className="w-full object-cover"
+                    className="w-full h-80 object-cover"
                 />
 
-                <div className="bg-white p-4 sm:p-6">
-                    <h3 className="mt-0.5 text-xl font-bold text-black">
-                        {city.city} - {city.country}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
+
+                <div className="absolute inset-y-32 p-4 sm:p-6">
+                    <h3 className="mt-0.5 text-2xl font-bold text-white">
+                        {city.city}
                     </h3>
 
-                    <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-900">
+                    <p className="mt-2 line-clamp-3 text-white">
                         {city.description}
                     </p>
+
+                    <div><p className="mt-2 text-sm/relaxed text-white">
+                        Country: {city.country} | Continent: {city.continent} | Language: {city.language} | Currency: {city.currency} | Religion: {city.religion}
+                    </p></div>
                 </div>
             </article>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 mt-4">
                 {
                     city && city.itinerary && city.itinerary.map((itinerary) => {
                         return (
-                            <div>
-                                <CardIt name={itinerary.name} price={itinerary.price} photo={itinerary.photo} user={itinerary.user.name} userImage={itinerary.user.image}/>
+                            <div key={itinerary._id}>
+                                <CardIt name={itinerary.name} price={itinerary.price} photo={itinerary.photo} user={itinerary.user.name} userImage={itinerary.user.image} duration={itinerary.duration}/>
                             </div>
                         )
                     })

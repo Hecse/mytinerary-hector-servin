@@ -10,7 +10,7 @@ const Card = ({title, image}) => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
 
       <div className="absolute inset-y-32 p-4 sm:p-6">
-        <p className="mt-8 text-xl font-bold text-white">
+        <p className="mt-8 text-2xl font-bold text-white">
           {title}
         </p>        
       </div>
