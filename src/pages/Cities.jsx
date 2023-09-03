@@ -1,32 +1,31 @@
 import { Link } from 'react-router-dom'
 import Card from '../components/Card'
-import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { filterCities, getCities } from '../store/actions/cityActions'
+
 
 export const Cities = () => {
-  const [cities, setCities] = useState();
+  //const [cities, setCities] = useState([]);
+
+  const cities = useSelector((store) => store.cityReducer.cities)
+  //console.log(store)
+
+  const dispatch = useDispatch();
+
   let inputSearch = useRef();
 
   useEffect(() => {
-    axios.get('http://localhost:7000/api/cities')
-      .then(response => setCities(response.data.cities))
-      .catch(err => console.log(err))
+    dispatch(getCities())
   }, []);
 
-  const handleSearch = async () => {
-    const name = inputSearch.current.value;
-    try {
-      const response = await axios.get(`http://localhost:7000/api/cities?city=${name}`)
-      setCities(response.data.cities)
-
-    } catch (error) {
-      if (error.response.status === 404) {
-        console.log('no se encontro la ciudad')
-        setCities([])
-      } else {
-        console.log(error)
-      }
-    }
+  const handleSearch = () => {
+    //const name = inputSearch.current.value;
+     {
+      dispatch(filterCities({
+        name: inputSearch.current.value
+      }))
+    } 
   }
 
   return (

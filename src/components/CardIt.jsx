@@ -19,7 +19,9 @@ const CardIt = ({ name, price, photo, user, userImage, duration, hashtag }) => {
             <p className="px-10 text-xl font-semibold pt-1 pb-2"> {name} </p>
             <p className="px-10 text-gray-700"> Price {price}</p>
             <p className="px-10 text-gray-700"> Duration {duration} hs</p>
-            <p className="px-10  text-gray-700"> Hashtags {hashtag} </p>
+            <p className="px-10 mb-6 text-gray-700"> {hashtag} </p>
+
+            <hr />
 
             <div className="mb-6 flex items-center justify-center gap-x-6">
                 <div>
