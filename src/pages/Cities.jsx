@@ -6,7 +6,6 @@ import { filterCities, getCities } from '../store/actions/cityActions'
 
 
 export const Cities = () => {
-  //const [cities, setCities] = useState([]);
 
   const cities = useSelector((store) => store.cityReducer.cities)
   //console.log(store)
@@ -20,12 +19,11 @@ export const Cities = () => {
   }, []);
 
   const handleSearch = () => {
-    //const name = inputSearch.current.value;
-     {
+    {
       dispatch(filterCities({
         name: inputSearch.current.value
       }))
-    } 
+    }
   }
 
   return (
