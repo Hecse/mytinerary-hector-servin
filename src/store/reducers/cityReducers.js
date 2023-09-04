@@ -1,8 +1,9 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { filterCities, getCities } from "../actions/cityActions";
+import { filterCities, getCities, getCity } from "../actions/cityActions";
 
 const initialState = {
-    cities: []
+    cities: [],
+    city:[]
 }
 
 const cityReducer = createReducer(initialState,
@@ -18,6 +19,15 @@ const cityReducer = createReducer(initialState,
             return {
                 ...state,
                 cities: action.payload.cities
+            }
+        })
+        .addCase(getCity.fulfilled, (state, action) => {
+            return {
+                ...state,
+                city: action.payload.city
+
+                //console.log(state)
+                //console.log(action.payload)
             }
         })
 )

@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousulb from '../components/Carousulb'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
@@ -22,10 +23,8 @@ const Home = () => {
                         <div className='flex justify-center mt-4'><Carousulb /></div>
 
                         <div className="my-4 flex items-center justify-center">
-                            <a
-                                className="inline-block rounded-full bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
-                                href="/Cities"> Start your journey here
-                            </a>
+                            <Link to="/Cities" className="inline-block rounded-full bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">Start your journey here
+                            </Link>                            
                         </div>
                     </div>
                 </div>

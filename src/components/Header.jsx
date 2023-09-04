@@ -20,7 +20,12 @@ const Header = () => {
                     <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(true)}>
                         <span className="sr-only">Open main menu</span>
 
-                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                        <svg className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            aria-hidden="true">
                             <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
@@ -33,7 +38,15 @@ const Header = () => {
 
                     <div className="hidden md:flex md:flex-1 md:justify-end items-center">
                         <div className="flex items-center justify-center border-2 border-indigo-600 rounded-full ml-5 h-10 w-10 ">
-                            <Link to="/Login"><img className="h-8" src="./assets/images/usuario.svg" alt="Log in" /></Link>
+                            <Link to="/Login">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    className="w-8 h-8">
+                                    <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -53,7 +66,13 @@ const Header = () => {
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"
                             onClick={() => setMobileMenuOpen(false)}>
                             <span className="sr-only">Close menu</span>
-                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            <svg className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="2.5"
+                                stroke="currentColor"
+                                aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
@@ -63,7 +82,7 @@ const Header = () => {
                             <div className="space-y-2 py-6">
                                 <Link to="/#" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-indigo-300">Home</Link>
                                 <Link to="/Cities" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-indigo-300">Cities</Link>
-                                <Link to="/Login" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-indigo-300">Login</Link>                                 
+                                <Link to="/Login" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-center font-semibold leading-7 text-gray-900 hover:bg-indigo-300">Login</Link>
                             </div>
                         </div>
                     </div>

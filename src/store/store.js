@@ -5,6 +5,6 @@ import cityReducer from "./reducers/cityReducers";
 export const store= configureStore({
     reducer: {
         userReducer: userReducer,
-        cityReducer: cityReducer
+        cityReducer: cityReducer,
     }
 })

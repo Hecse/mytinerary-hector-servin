@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Card from '../components/Card'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { filterCities, getCities } from '../store/actions/cityActions'
 
@@ -44,7 +44,7 @@ export const Cities = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
         {
           cities?.length > 0
             ? cities?.map((city) => {

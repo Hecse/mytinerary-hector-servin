@@ -1,58 +1,55 @@
-import axios from "axios"
 import CardIt from "../components/CardIt"
 import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getCity } from "../store/actions/cityActions"
 
 const City = () => {
 
     const { id } = useParams();
     const [city, setCity] = useState({});
+    const onecity = useSelector((store) => store.cityReducer.city)
+    //console.log(onecity);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        // trae info de la API
-        axios.get('http://localhost:7000/api/cities/' + id)
-            .then(response => {
-                const cityData = response.data.city;
-                setCity(cityData);
-            })
-            .catch(error => {
-                console.error("Error fetching city data:", error);
-            });
-    }, [id]); // se ejecuta cada vez q cambia el id
+        dispatch(getCity(id));
+    }, []);
 
     return (
         <div className='container mx-auto px-8'>
             <article className="overflow-hidden relative rounded-lg ">
                 <img
                     alt="Photo"
-                    src={city.image}
+                    src={onecity.image}
                     className="w-full h-80 object-cover"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
 
                 <div className="absolute inset-y-32 p-4 sm:p-6">
-                    <h3 className="mt-0.5 text-2xl font-bold text-white">
-                        {city.city}
+                    <h3 className=" text-3xl font-bold text-white">
+                        {onecity.city}
                     </h3>
 
                     <p className="mt-2 line-clamp-3 text-white">
-                        {city.description}
+                        {onecity.description}
                     </p>
 
                     <div><p className="mt-2 text-sm/relaxed text-white">
-                        Country: {city.country} |
-                        Continent: {city.continent} |
-                        Language: {city.language} |
-                        Currency: {city.currency} |
-                        Religion: {city.religion}
+                        Country: {onecity.country} |
+                        Continent: {onecity.continent} |
+                        Language: {onecity.language} |
+                        Currency: {onecity.currency} |
+                        Religion: {onecity.religion}
                     </p></div>
                 </div>
             </article>
 
             <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 mt-4">
                 {
-                    city && city.itinerary && city.itinerary.map((itinerary) => {
+                    onecity && onecity.itinerary && onecity.itinerary.map((itinerary) => {
                         return (
                             <div key={itinerary._id}>
                                 <CardIt name={itinerary.name}
