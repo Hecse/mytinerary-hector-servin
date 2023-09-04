@@ -41,7 +41,11 @@ const City = () => {
                     </p>
 
                     <div><p className="mt-2 text-sm/relaxed text-white">
-                        Country: {city.country} | Continent: {city.continent} | Language: {city.language} | Currency: {city.currency} | Religion: {city.religion}
+                        Country: {city.country} |
+                        Continent: {city.continent} |
+                        Language: {city.language} |
+                        Currency: {city.currency} |
+                        Religion: {city.religion}
                     </p></div>
                 </div>
             </article>
@@ -51,7 +55,13 @@ const City = () => {
                     city && city.itinerary && city.itinerary.map((itinerary) => {
                         return (
                             <div key={itinerary._id}>
-                                <CardIt name={itinerary.name} price={itinerary.price} photo={itinerary.photo} user={itinerary.user.name} userImage={itinerary.user.image} duration={itinerary.duration} hashtag={itinerary.hashtag}/>
+                                <CardIt name={itinerary.name}
+                                    price={itinerary.price}
+                                    photo={itinerary.photo}
+                                    user={itinerary.user.name}
+                                    userImage={itinerary.user.image}
+                                    duration={itinerary.duration}
+                                    hashtag={itinerary.hashtag} />
                             </div>
                         )
                     })
