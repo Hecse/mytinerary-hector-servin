@@ -11,7 +11,9 @@ const Header = () => {
                 <div className="flex items-center lg:flex-1">
                     <Link to="/#" className="-m-1.5 p-1.5">
                         <span className="sr-only">MyTinerary</span>
-                        <img className="h-10 w-auto" src="/assets/images/favicon.png" alt="My Tinerary" />
+                        <img className="h-10 w-full" 
+                        src="/assets/images/mt.png" 
+                        alt="My Tinerary" />
                     </Link>
                     <p className="ml-2 text-md text-gray-800 font-[audiowide-regular]">MyTinerary</p>
                 </div>
@@ -23,7 +25,7 @@ const Header = () => {
                         <svg className="h-6 w-6"
                             fill="none"
                             viewBox="0 0 24 24"
-                            strokeWidth={2}
+                            strokeWidth="2"
                             stroke="currentColor"
                             aria-hidden="true">
                             <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -39,13 +41,14 @@ const Header = () => {
                     <div className="hidden md:flex md:flex-1 md:justify-end items-center">
                         <div className="flex items-center justify-center border-2 border-indigo-600 rounded-full ml-5 h-10 w-10 ">
                             <Link to="/Login">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5"
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
                                     stroke="currentColor"
                                     className="w-8 h-8">
                                     <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                                 </svg>
-
                             </Link>
                         </div>
                     </div>
@@ -58,7 +61,7 @@ const Header = () => {
 
                     <div className="flex items-center justify-between">
 
-                        <a href="#" className="-m-1.5 p-1.5"> <span className="sr-only">MyTinerary</span> <img className="h-8 w-auto" src="/assets/images/favicon.png" alt="MyTineray" />
+                        <a href="#" className="-m-1.5 p-1.5"> <span className="sr-only">MyTinerary</span> <img className="h-8 w-auto" src="/assets/images/mt.png" alt="MyTineray" />
                         </a>
 
                         <button
