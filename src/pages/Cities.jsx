@@ -43,6 +43,7 @@ export const Cities = () => {
               ref={inputSearch}
               className="w-full bg-white pl-2 text-base font-semibold outline-0"
               type="text"
+              id="basic-addon1"
               placeholder="City name"
             />
 
@@ -54,6 +55,7 @@ export const Cities = () => {
         </div>
       </div>
 
+      {/* mapea las cities y trae los titulos y las imagenes solo cuando .length es mayor que 0*/}
       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
         {
           cities?.length > 0
@@ -67,6 +69,7 @@ export const Cities = () => {
         }
       </div>
 
+      {/* se ejecuta cuando .lenght es igual a 0 esta por fuera para que no me tome el formato de columnas */}
       <div>
         {cities?.length === 0 &&
           <div className="flex h-screen text-center items-center justify-center text-lg">
