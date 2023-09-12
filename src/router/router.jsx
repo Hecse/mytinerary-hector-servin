@@ -4,6 +4,7 @@ import Layouts from '../layouts/Layouts'
 import { Cities } from "../pages/Cities";
 import LogIn from "../pages/LogIn";
 import City from "../pages/City";
+import SignUp from "../pages/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <LogIn />
+            },
+            {
+                path: '/singup',
+                element: <SignUp />
             }
         ]
     },

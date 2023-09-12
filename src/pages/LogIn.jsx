@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom';
 
 const LogIn = () => {
@@ -24,7 +23,7 @@ const LogIn = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required
+              className="w-full px-4 py-2 mb-4 border shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required
             />
 
             <label
@@ -36,7 +35,7 @@ const LogIn = () => {
               type="password"
               id="password"
               name="password"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required
+              className="w-full px-4 py-2 border shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required
             />
           </div>
 
@@ -48,7 +47,7 @@ const LogIn = () => {
 
           <p className="mt-4 text-center font-normal">
             You do not have an account?{" "}
-            <Link to="#" className="font-medium text-cyan-600">
+            <Link to="/singup" className="font-medium text-cyan-600">
               Sign up now
             </Link>
           </p>
