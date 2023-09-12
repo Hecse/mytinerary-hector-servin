@@ -1,6 +1,42 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { userlogin } from '../store/actions/userActions';
+
 
 const LogIn = () => {
+  const store = useSelector(store => store.userReducer);
+  console.log('viene del store', store)
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
+
+  const dispatch = useDispatch();
+
+  //trae los datos desde el imput
+  const handleInput = (user) => {
+    setFormData({
+      ...formData,
+      [user.target.name]: user.target.value
+    })
+  }
+
+  //trae los dotos desde el back
+  const handleSingIn = async (user) => {
+    user.preventDefault();
+
+    try {
+      dispatch(userlogin({
+        data: formData
+      }))
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div color="transparent">
@@ -12,7 +48,7 @@ const LogIn = () => {
           Enter your details.
         </p>
 
-        <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+        <form onSubmit={handleSingIn} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
           <div className="mb-6">
             <label
               id="mail"
@@ -20,6 +56,7 @@ const LogIn = () => {
               Email
             </label>
             <input
+              onChange={handleInput}
               type="email"
               id="email"
               name="email"
@@ -32,6 +69,7 @@ const LogIn = () => {
               Password
             </label>
             <input
+              onChange={handleInput}
               type="password"
               id="password"
               name="password"
@@ -40,6 +78,7 @@ const LogIn = () => {
           </div>
 
           <button
+            onClick={handleSingIn}
             type="submit"
             className="mt-6 inline-block rounded-full bg-indigo-600 px-8 py-3 text-sm font-medium text-white w-full transition hover:scale-110">
             Sign In

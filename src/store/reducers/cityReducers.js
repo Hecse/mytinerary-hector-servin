@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const cityReducer = createReducer(initialState,
-    (builer) => builer
+    (builder) => builder
         .addCase(getCities.fulfilled, (state, action) => {
             return {
                 ...state,
