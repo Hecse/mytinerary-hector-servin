@@ -5,6 +5,7 @@ import { Cities } from "../pages/Cities";
 import LogIn from "../pages/LogIn";
 import City from "../pages/City";
 import SignUp from "../pages/SignUp";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,10 @@ const router = createBrowserRouter([
             },
             {
                 path: '/login',
-                element: <LogIn />
+                element: (<ProtectedRoute path='/'>
+                    <LogIn />
+                </ProtectedRoute>)
+
             },
             {
                 path: '/singup',

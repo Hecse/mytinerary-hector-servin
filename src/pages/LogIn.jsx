@@ -6,7 +6,7 @@ import { userlogin } from '../store/actions/userActions';
 
 const LogIn = () => {
   const store = useSelector(store => store.userReducer);
-  console.log('viene del store', store)
+  //console.log('viene del store', store)
 
   const [formData, setFormData] = useState({
     email: '',
