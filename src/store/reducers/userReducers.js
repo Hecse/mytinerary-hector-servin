@@ -23,9 +23,9 @@ const userReducer = createReducer(initialState,
 
         .addCase(userlogout.fulfilled, (state, action) => {
             return {
-                /* ...state,
+                ...state,
                 user: null,
-                token: null */
+                token: null
             }
         }))
 
