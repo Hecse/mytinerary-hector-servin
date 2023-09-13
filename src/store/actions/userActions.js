@@ -28,15 +28,14 @@ export const user_token = createAction('user_token', (user) => {
     }
 })
 
-export const userlogout = createAsyncThunk('userlogout', async (obj) => {
+/* export const userlogout = createAsyncThunk('userlogout', async (obj) => {
     try {
         const { data } = await axios.post('http://localhost:7000/api/auth/signout', obj.data)
-        console.log(data);
+        //console.log(data);
         localStorage.setItem('token', JSON.stringify(data.response.token))
         localStorage.setItem('user', JSON.stringify(data.response.user))
         return {
-            user: null,
-            
+            user: null,            
         }
 
     } catch (error) {
@@ -45,4 +44,4 @@ export const userlogout = createAsyncThunk('userlogout', async (obj) => {
             user: data.response.user
         }
     }
-})
+}) */

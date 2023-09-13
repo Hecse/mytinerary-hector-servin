@@ -1,16 +1,18 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { user_token, userlogin, userlogout } from "../actions/userActions";
+import { user_token, userlogin } from "../actions/userActions";
 
 const initialState = {
-    log: 'Hola'
+    user: null,
+    token: null
 }
 
 const userReducer = createReducer(initialState,
     (builde) => builde
-        .addCase(userlog, (state, action) => {
+        .addCase(userlogin.fulfilled, (state, action) => {
             return {
                 ...state,
-                log: action.payload.log
+                user: action.payload.user,
+                token: action.payload.token
             }
         })
 
@@ -21,12 +23,13 @@ const userReducer = createReducer(initialState,
             }
         })
 
-        .addCase(userlogout.fulfilled, (state, action) => {
+        /* .addCase(userlogout.fulfilled, (state, action) => {
             return {
                 ...state,
                 user: null,
                 token: null
             }
-        }))
+        }) */
+)
 
 export default userReducer
