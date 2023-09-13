@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { userlogin } from '../store/actions/userActions';
+import GoogleAccount from '../components/GoogleAccount';
+
 
 const LogIn = () => {
   const store = useSelector(store => store.userReducer);
@@ -74,12 +76,20 @@ const LogIn = () => {
               className="w-full px-4 py-2 border shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required
             />
           </div>
+
+          <p className="mt-1 mb-4 font-normal text-center">
+            Or
+          </p>
+
+          <div className='flex items-center justify-center'><GoogleAccount /></div>          
+
           <button
             onClick={handleSingIn}
             type="submit"
             className="mt-6 inline-block rounded-full bg-indigo-600 px-8 py-3 text-sm font-medium text-white w-full transition hover:scale-110">
             Sign In
           </button>
+
           <p className="mt-4 text-center font-normal">
             You do not have an account?{" "}
             <Link to="/singup" className="font-medium text-cyan-600">
