@@ -24,7 +24,7 @@ const LogIn = () => {
     })
   }
 
-  //trae los dotos desde el back
+  //trae los datos desde el back
   const handleSingIn = async (event) => {
     event.preventDefault();
 
