@@ -47,14 +47,13 @@ export const user_token = createAction('user_token', (user) => {
     }
 })
 
-/* export const userlogout = createAsyncThunk('userlogout', async (obj) => {
+export const userlogout = createAction('userlogout', () => {
     try {
-        const { data } = await axios.post('http://localhost:7000/api/auth/signout', obj.data)
-        //console.log(data);
-        localStorage.setItem('token', JSON.stringify(data.response.token))
-        localStorage.setItem('user', JSON.stringify(data.response.user))
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
         return {
-            user: null,            
+            token: null,
+            user: null
         }
 
     } catch (error) {
@@ -63,4 +62,4 @@ export const user_token = createAction('user_token', (user) => {
             user: data.response.user
         }
     }
-}) */
+})

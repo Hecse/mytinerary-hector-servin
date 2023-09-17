@@ -67,13 +67,7 @@ const Carousulb = () => {
                             strokeWidth="3"
                             stroke="currentColor" >
                             <path d="M15.75 19.5L8.25 12l7.5-7.5" />
-                        </svg>
-
-                    {/* <img
-                        className='h-8 p1 rounded-full bg-white/50 hover:bg-white'
-                        src='public/assets/images/chevron-left-svgrepo-com.svg'
-                        alt='left'
-                    /> */}
+                        </svg>                    
                 </button>
 
                 <button className='w-8 h-8 p-1 rounded-full bg-white/50 hover:bg-white' onClick={handleNext}>
@@ -84,13 +78,7 @@ const Carousulb = () => {
                             strokeWidth="3"
                             stroke="currentColor">
                             <path d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-
-                    {/* <img
-                        className='h-8 p1 rounded-full bg-white/50 hover:bg-white'
-                        src='public/assets/images/chevron-right-svgrepo-com.svg'
-                        alt='right'
-                    /> */}
+                        </svg>                    
                 </button>
 
             </div>
