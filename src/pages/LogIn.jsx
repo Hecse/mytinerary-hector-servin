@@ -16,7 +16,7 @@ const LogIn = () => {
 
   const dispatch = useDispatch();
 
-  //trae los datos desde el imput
+  //trae los datos desde el input
   const handleInput = (event) => {
     setFormData({
       ...formData,
@@ -27,7 +27,6 @@ const LogIn = () => {
   //trae los datos desde el back
   const handleSingIn = async (event) => {
     event.preventDefault();
-
     try {
       dispatch(userlogin({
         data: formData
