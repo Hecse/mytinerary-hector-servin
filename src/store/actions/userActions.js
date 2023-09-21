@@ -1,5 +1,6 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 export const userlogin = createAsyncThunk('userlogin', async (obj) => {
     try {
@@ -7,6 +8,14 @@ export const userlogin = createAsyncThunk('userlogin', async (obj) => {
         console.log(data);
         localStorage.setItem('token', data.response.token)
         localStorage.setItem('user', JSON.stringify(data.response.user))
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome',
+            text: data.response.user.name + ' ' + data.response.user.lastname,
+            showConfirmButton: false,
+            timer: 2500
+        })
         return {
             user: data.response.user,
             token: data.response.token
@@ -14,6 +23,12 @@ export const userlogin = createAsyncThunk('userlogin', async (obj) => {
 
     } catch (error) {
         console.log(error);
+        Swal.fire({
+            title: 'Error!',
+            text: error.response.data.message,
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        })
         return {
             user: null
         }
@@ -26,6 +41,14 @@ export const usersingup = createAsyncThunk('usersingup', async (obj) => {
         console.log(data);
         localStorage.setItem('token', data.response.token)
         localStorage.setItem('user', JSON.stringify(data.response.user))
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome',
+            text: data.response.user.name + ' ' + data.response.user.lastname,
+            showConfirmButton: false,
+            timer: 2500
+        })
         return {
             user: data.response.user,
             token: data.response.token
@@ -33,6 +56,12 @@ export const usersingup = createAsyncThunk('usersingup', async (obj) => {
 
     } catch (error) {
         console.log(error);
+        Swal.fire({
+            title: 'Error!',
+            text: error.response.data.message,
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        })
         return {
             user: null
         }
@@ -41,7 +70,6 @@ export const usersingup = createAsyncThunk('usersingup', async (obj) => {
 
 export const userlogingoogle = createAsyncThunk('userlogingoogle', async (userResponse) => {
     try {
-        //const { data } = obj.data
         localStorage.setItem('token', userResponse.data.response.token)
         localStorage.setItem('user', JSON.stringify(userResponse.data.response.user))
         return {

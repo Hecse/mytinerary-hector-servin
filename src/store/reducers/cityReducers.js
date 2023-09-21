@@ -24,10 +24,7 @@ const cityReducer = createReducer(initialState,
         .addCase(getCity.fulfilled, (state, action) => {
             return {
                 ...state,
-                city: action.payload.city
-
-                //console.log(state)
-                //console.log(action.payload)
+                city: action.payload.city                
             }
         })
 )
