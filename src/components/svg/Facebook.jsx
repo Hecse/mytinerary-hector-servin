@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Facebook = () => {
     return (
         <svg className="h-8 w-8"

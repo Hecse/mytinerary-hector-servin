@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Hamburger = () => {
     return (
         <svg className="h-6 w-6"
