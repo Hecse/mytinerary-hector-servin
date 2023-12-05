@@ -22,7 +22,6 @@ export default function Acord() {
                         </>
                     )}
                 </Disclosure>
-
             </div>
         </div>
     )
